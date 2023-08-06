@@ -1,10 +1,10 @@
 import{ BsFillBellFill,  BsFillEnvelopeFill, BsPersonCircle, BsJustify, BsSearch } from 'react-icons/bs';
 
-const Header = () => {
+const Header = ({ menuHandler }) => {
     return (
         <header className="header">
             <div className="menu-icon">
-                <BsJustify className='icon' />
+                <BsJustify className='icon' onClick={ menuHandler } />
             </div>
             <div className="header-left">
                 <BsSearch className='icon' />

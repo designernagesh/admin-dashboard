@@ -1,21 +1,21 @@
-import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs';
+import { BsCart3 } from 'react-icons/bs';
 
 import data from '../data/data';
 
-const Sidebar = () => {
+const Sidebar = ({ showSidebar, menuHandler }) => {
     return (
-        <div className="sidebar" id="sidebar">
+        <div className={ showSidebar ? "sidebar-responsive" : "" } id="sidebar">
             <div className="sidebar-title">
                 <div className="sidebar-brand">
                     <BsCart3 /> Dashboard
                 </div>
-                <span className="icon close_icon"></span>
+                <span className="icon close_icon" onClick={ menuHandler }>X</span>
             </div>
             <ul className="sidebar-list">
                 {
                     data.sidebarMenu.map((item, i) => {
                         return (
-                                <li className='sidebar-list-item'>
+                                <li className='sidebar-list-item' key={i}>
                                     <a href="">
                                         {item.icon}  {item.name}
                                     </a>
